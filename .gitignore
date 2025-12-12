@@ -1,0 +1,81 @@
+# -------------------------
+# OS Artifacts
+# -------------------------
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+__MACOSX/
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# -------------------------
+# Python
+# -------------------------
+# Byte-compiled
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+*.egg
+.eggs/
+
+# Logs
+*.log
+
+# Cache
+.cache/
+pytest_cache/
+pip-wheel-metadata/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# SQLite / local DBs
+*.sqlite3
+*.db
+
+# -------------------------
+# IDE / Editor
+# -------------------------
+# PyCharm
+.idea/
+*.iml
+
+# VSCode (just in case)
+.vscode/
+
+# -------------------------
+# Environment / Secrets
+# -------------------------
+.env
+.env.*
+*.pem
+*.key
+*.crt
+
+# -------------------------
+# Node (if frontend involved later)
+# -------------------------
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# -------------------------
+# Misc
+# -------------------------
+*.swp
+*.swo
