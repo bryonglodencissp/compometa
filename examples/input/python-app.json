@@ -1,0 +1,35 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "version": 1,
+  "metadata": {
+    "tools": [
+      { "vendor": "anchore", "name": "syft", "version": "0.104.0" }
+    ],
+    "component": {
+      "type": "application",
+      "name": "python-app"
+    }
+  },
+  "components": [
+    {
+      "type": "library",
+      "name": "requests",
+      "version": "2.32.3",
+      "purl": "pkg:pypi/requests@2.32.3",
+      "licenses": [{ "license": { "id": "Apache-2.0" } }]
+    },
+    {
+      "type": "library",
+      "name": "urllib3",
+      "version": "2.2.1",
+      "purl": "pkg:pypi/urllib3@2.2.1"
+    },
+    {
+      "type": "library",
+      "name": "certifi",
+      "version": "2024.2.2",
+      "purl": "pkg:pypi/certifi@2024.2.2"
+    }
+  ]
+}

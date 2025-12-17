@@ -1,0 +1,11 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "version": 1,
+  "metadata": {
+    "tools": [
+      { "vendor": "anchore", "name": "syft", "version": "0.104.0" }
+    ]
+  },
+  "components": []
+}

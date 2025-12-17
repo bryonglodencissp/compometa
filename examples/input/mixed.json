@@ -1,0 +1,25 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "version": 1,
+  "components": [
+    {
+      "type": "library",
+      "name": "flask",
+      "version": "3.0.2",
+      "purl": "pkg:pypi/flask@3.0.2"
+    },
+    {
+      "type": "library",
+      "name": "express",
+      "version": "4.19.2",
+      "purl": "pkg:npm/express@4.19.2"
+    },
+    {
+      "type": "library",
+      "name": "openssl",
+      "version": "3.1.4-r5",
+      "purl": "pkg:apk/alpine/openssl@3.1.4-r5"
+    }
+  ]
+}
