@@ -1,26 +1,105 @@
-# CompoMeta
+# Compometa
 
-CompoMeta post-processes existing SBOMs (SPDX or CycloneDX) to enrich them with FDA-expected supportability metadata (e.g., maintenance/support status and end-of-support information) while preserving the original SBOM format.
+**Deterministic CycloneDX SBOM completion for FDA-aligned supportability metadata**
 
-## Why it exists
+Compometa is an open-source tool that ingests **CycloneDX JSON SBOMs** (expected: Syft-shaped per contract) and emits a **CycloneDX JSON SBOM** with FDA-expected supportability fields present for every component.
 
-Most SBOM generators produce standards-compliant SBOMs aligned to the NTIA minimum elements. FDA premarket cybersecurity guidance goes further by expecting additional component supportability context. CompoMeta helps close that gap without replacing your existing SBOM generator.
+It is intentionally minimal, predictable, and regulator-friendly.
 
-## What it does
+---
 
-- Accepts an input SBOM (SPDX or CycloneDX)
-- Adds supportability fields (support/maintenance status and end-of-support/end-of-life info)
-- Outputs an SBOM in the same original format
+## What Compometa Does
 
-## Status
+Compometa:
+- Accepts **CycloneDX JSON** SBOMs
+- Emits **CycloneDX JSON** SBOMs (same format)
+- Ensures every component contains:
+  - `softwareMaintenanceStatus`
+  - `softwareEndOfLifeDate`
+- Provides deterministic, idempotent output:
+  - stable ordering
+  - no regenerated UUIDs
+  - no timestamps added
 
-Early development. Interfaces and field mappings may change.
+At the current milestone (`provider=none`), both fields default to `"unknown"`.
 
-## Contributing
+---
 
-Issues and PRs are welcome, especially real-world med-tech use cases and field-mapping feedback.
+## What Compometa Does Not Do
 
-## Support
+Compometa does **not**:
+- guess lifecycle metadata
+- scrape upstream repositories
+- infer end-of-life dates
+- claim authoritative truth for third-party support status
 
-If this project helps your team, GitHub Sponsors supports ongoing maintenance and development.
+If lifecycle data is unknown, Compometa records `"unknown"` explicitly.
 
+---
+
+## Supported Formats
+
+- **Input:** CycloneDX JSON
+- **Output:** CycloneDX JSON
+- **SPDX:** not supported (current scope)
+
+---
+
+## Architecture
+
+![Compometa Architecture](docs/architecture/compometa-architecture.png)
+
+Architecture explanation:
+- `docs/architecture/architecture.md`
+
+CycloneDX contract:
+- `docs/cyclonedx-contract.md`
+
+---
+
+## Usage
+
+Transform an SBOM (provider = none):
+
+```bash
+PYTHONPATH=src python -m compometa.cli \
+  --in examples/input/python-app.json \
+  --out out.json \
+  --provider none
+```
+This guarantees that all components in the output SBOM contain the FDA supportability fields with value "unknown" unless already present.
+
+## Testing
+
+Compometa uses golden-file testing against real CycloneDX fixtures.
+- Input fixtures: `examples/input/`
+- Expected outputs: `examples/expected/`
+
+Run tests with:
+
+```bash
+PYTHONPATH=src pytest -q
+```
+Golden tests assert byte-for-byte stability after normalization.
+
+---
+
+## Project Status
+
+Current milestone:
+- `provider=none`
+- FDA supportability fields injected deterministically
+- Real CycloneDX fixtures with golden outputs
+- Idempotent behavior verified by tests
+
+Planned evolution:
+- Optional provider-backed enrichment (external, black-box)
+- No change to core determinism or format guarantees
+
+---
+
+## License
+
+MIT License. See `LICENSE`.
+
+---
