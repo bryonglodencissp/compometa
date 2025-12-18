@@ -1,0 +1,59 @@
+{
+  "bomFormat": "CycloneDX",
+  "components": [
+    {
+      "components": [
+        {
+          "components": [
+            {
+              "name": "grandchild-library",
+              "purl": "pkg:maven/com.example/grandchild-library@4.5.6",
+              "softwareEndOfLifeDate": "unknown",
+              "softwareMaintenanceStatus": "unknown",
+              "type": "library",
+              "version": "4.5.6"
+            }
+          ],
+          "name": "child-library-b",
+          "purl": "pkg:npm/child-library-b@0.9.1",
+          "softwareEndOfLifeDate": "unknown",
+          "softwareMaintenanceStatus": "unknown",
+          "type": "library",
+          "version": "0.9.1"
+        },
+        {
+          "name": "child-library-a",
+          "purl": "pkg:pypi/child-library-a@1.2.0",
+          "softwareEndOfLifeDate": "unknown",
+          "softwareMaintenanceStatus": "unknown",
+          "type": "library",
+          "version": "1.2.0"
+        }
+      ],
+      "name": "parent-library",
+      "purl": "pkg:pypi/parent-library@2.3.4",
+      "softwareEndOfLifeDate": "unknown",
+      "softwareMaintenanceStatus": "unknown",
+      "type": "library",
+      "version": "2.3.4"
+    }
+  ],
+  "metadata": {
+    "component": {
+      "name": "hierarchical-app",
+      "type": "application",
+      "version": "1.0.0"
+    },
+    "timestamp": "2025-01-01T00:00:00Z",
+    "tools": [
+      {
+        "name": "synthetic-generator",
+        "vendor": "example",
+        "version": "0.1"
+      }
+    ]
+  },
+  "serialNumber": "urn:uuid:11111111-2222-3333-4444-555555555555",
+  "specVersion": "1.5",
+  "version": 1
+}

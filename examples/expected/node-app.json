@@ -1,0 +1,40 @@
+{
+  "bomFormat": "CycloneDX",
+  "components": [
+    {
+      "name": "@types/node",
+      "purl": "pkg:npm/%40types/node@20.11.19",
+      "softwareEndOfLifeDate": "unknown",
+      "softwareMaintenanceStatus": "unknown",
+      "type": "library",
+      "version": "20.11.19"
+    },
+    {
+      "name": "chalk",
+      "purl": "pkg:npm/chalk@5.3.0",
+      "softwareEndOfLifeDate": "unknown",
+      "softwareMaintenanceStatus": "unknown",
+      "type": "library",
+      "version": "5.3.0"
+    },
+    {
+      "name": "lodash",
+      "purl": "pkg:npm/lodash@4.17.21",
+      "softwareEndOfLifeDate": "unknown",
+      "softwareMaintenanceStatus": "unknown",
+      "type": "library",
+      "version": "4.17.21"
+    }
+  ],
+  "metadata": {
+    "tools": [
+      {
+        "name": "syft",
+        "vendor": "anchore",
+        "version": "0.104.0"
+      }
+    ]
+  },
+  "specVersion": "1.5",
+  "version": 1
+}

@@ -1,0 +1,31 @@
+{
+  "bomFormat": "CycloneDX",
+  "components": [
+    {
+      "name": "openssl",
+      "purl": "pkg:apk/alpine/openssl@3.1.4-r5",
+      "softwareEndOfLifeDate": "unknown",
+      "softwareMaintenanceStatus": "unknown",
+      "type": "library",
+      "version": "3.1.4-r5"
+    },
+    {
+      "name": "express",
+      "purl": "pkg:npm/express@4.19.2",
+      "softwareEndOfLifeDate": "unknown",
+      "softwareMaintenanceStatus": "unknown",
+      "type": "library",
+      "version": "4.19.2"
+    },
+    {
+      "name": "flask",
+      "purl": "pkg:pypi/flask@3.0.2",
+      "softwareEndOfLifeDate": "unknown",
+      "softwareMaintenanceStatus": "unknown",
+      "type": "library",
+      "version": "3.0.2"
+    }
+  ],
+  "specVersion": "1.5",
+  "version": 1
+}
